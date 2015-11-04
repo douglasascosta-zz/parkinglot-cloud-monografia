@@ -1,0 +1,133 @@
+%%% PREAMBLE - Do not touch %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt,onecolumn,letterpaper]{article}
+\usepackage[ansinew]{inputenc}
+\usepackage[brazil,english]{babel}
+\usepackage{model}
+\usepackage{times}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{color}
+\usepackage[pagebackref=true,breaklinks=true,letterpaper=true,colorlinks,bookmarks=false]{hyperref}
+\input{pics/abaco}
+
+\cvprfinalcopy % *** Uncomment this line for the final submission
+\def\httilde{\mbox{\tt\raisebox{-.5ex}{\symbol{126}}}}
+\ifcvprfinal\pagestyle{empty}\fi
+
+\newcommand{\TODO}[1]{TODO: #1}
+\newcommand{\CITEONE}[2]{\mbox{#1 \cite{#2}}}
+\newcommand{\CITETWO}[3]{\mbox{#1 and #2 \cite{#3}}}
+\newcommand{\CITEN}[2]{\mbox{#1 et al. \cite{#2}}}
+
+\begin{document}
+
+%%% Título e autores %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Encontrando estacionamentos na nuvem}
+\author{Douglas A. S. Costa
+	\thanks{Is with the Institute of Computing, University of Campinas (Unicamp). \textbf{Contact}: \tt\small{ra104825@students.ic.unicamp.br}}
+}
+
+%%% Abstract %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\maketitle
+
+\begin{abstract}
+Neste trabalho propus e montei uma simulação de uma aplicação rodando na nuvem que analisa a rota de um veículo e encontra estacionamento próximos de seu destino baseando-se em localizações de estacionamentos pré-cadastrados e rodando servidores para consulta de vagas disponíveis. 
+A simulação foi feita usando o SUMO (Simulator of Urban Mobility) através de sua interface para Java: TraCI4J.
+\end{abstract}
+
+%%% Introduction %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introdução}
+Este trabalho busca resolver um problema muito comum nos dias de hoje, a busca por um espaço para seu veículo numa determinada localização.
+
+Todos nós já passamos pela cansativa busca de vagas em estacionamentos perto da localização de algum destino. O problema é que nem sempre os mais próximos possuem vagas ou são os mais baratos. Se fosse apenas um preço fixo, resolveríamos o problema apenas cadastrando o preço de cada estacionamento num banco de dados, mas não resolveria o problema das vagas.
+
+O caso das vagas é mais complexo pois podemos ter vários tipos, por exemplo se é coberta ou não, se é vaga de moto, carro ou para carros maiores. Também poderíamos supor que o preço varia com o tipo da vaga, afinal uma vaga descoberta de moto não deve pagar o mesmo preço de uma vaga coberta para uma caminhonete \textit{heavy duty}.
+
+A solução encontrada foi criar uma camada de \textit{Fog} (Névoa) em que estarão os servidores dos estacionamentos disponíveis para comunicação com a Nuvem para a obtenção desse tipo informações em tempo real.
+
+%%% Motivação
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Justificativa}
+Motivação. 
+
+%%% Add section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Objetivos}
+Objetivos.
+
+\section{Desenvolvimento do Trabalho}
+Experimentos.
+
+\section{Resultados}
+
+\section{Conclusões}
+
+Examples of citations~\cite{Ni_2008, Ni_2009}. For direct citations use something like: 
+
+\CITEONE{Silva}{Silva_2010} for papers with one author.
+\CITETWO{Silva}{Souza}{Silva_2010b} for papers with two authors.
+\CITEN{Silva}{Silva_2010c} for papers with three or more authors.
+
+Example of a figure of one column. 
+\begin{figure}
+\begin{center}
+	\includegraphics[width=0.99\columnwidth]{pics/example-figure}
+	\caption{A figure example spanning one column only.\label{fig:label}}   
+\end{center} 
+\end{figure}   
+
+Example of a figure spanning two columns. 
+\begin{figure*}
+\begin{center}
+	\includegraphics[width=0.99\textwidth]{pics/example-figure-spanned}
+	\caption{A figure example spanning two columns.\label{fig:label2}}   
+\end{center} 
+\end{figure*}
+
+Example of a table spanning only one column: 
+
+\begin{table}
+\begin{center}
+\begin{tabular}{l*{6}{c}r}
+Team              & P & W & D & L & F  & A & Pts \\
+\hline
+Manchester United & 6 & 4 & 0 & 2 & 10 & 5 & 12  \\
+Celtic            & 6 & 3 & 0 & 3 &  8 & 9 &  9  \\
+Benfica           & 6 & 2 & 1 & 3 &  7 & 8 &  7  \\
+FC Copenhagen     & 6 & 2 & 1 & 2 &  5 & 8 &  7  \\
+\end{tabular}
+\end{center}
+\end{table}
+
+Example of a table spanning two columns: 
+
+\begin{table*}
+\begin{center}
+    \begin{tabular}{ | l | l | l | p{8cm} |}
+    \hline
+    Day & Min Temp & Max Temp & Summary \\ \hline
+    Monday & 11C & 22C & A clear day with lots of sunshine.  
+    However, the strong breeze will bring down the temperatures. \\ \hline
+    Tuesday & 9C & 19C & Cloudy with rain, across many northern regions. Clear spells
+    across most of Scotland and Northern Ireland,
+    but rain reaching the far northwest. \\ \hline
+    Wednesday & 10C & 21C & Rain will still linger for the morning.
+    Conditions will improve by early afternoon and continue
+    throughout the evening. \\
+    \hline
+    \end{tabular}
+\end{center}    
+\end{table*}
+
+%%% Add section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Trabalhos futuros}
+Present the main conclusions of the work as well as some future directions for other people interested in continuing this work. 
+
+%%% References %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{\small
+\bibliographystyle{unsrt}
+\bibliography{refs}
+}
+
+\end{document}
