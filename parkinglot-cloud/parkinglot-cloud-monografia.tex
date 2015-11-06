@@ -24,28 +24,31 @@
 \begin{document}
 
 %%% Título e autores %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\title{Encontrando estacionamentos na nuvem}
-\author{Douglas A. S. Costa
-	\thanks{Is with the Institute of Computing, University of Campinas (Unicamp). \textbf{Contact}: \tt\small{ra104825@students.ic.unicamp.br}}
-}
+\title{Usando a nuvem para encontrar estacionamentos}
+\author{Douglas A. S. Costa}
+
 
 %%% Abstract %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \maketitle
 
-\begin{abstract}
-Neste trabalho propus e montei uma simulação de uma aplicação rodando na nuvem que analisa a rota de um veículo e encontra estacionamento próximos de seu destino baseando-se em localizações de estacionamentos pré-cadastrados e rodando servidores para consulta de vagas disponíveis. 
-A simulação foi feita usando o SUMO (Simulator of Urban Mobility) através de sua interface para Java: TraCI4J.
-\end{abstract}
+\section{Resumo}
+\textit{
+A cada dia que passa cresce o número de carros nas ruas e os problemas de trânsito se agravam continuamente. Podemos ver os impactos em nosso cotidiano principalmente na hora de procurar vagas para estacionar.
+Baseando-se num modelo de sensores e servidores comuns presentes nos estacionamentos dos estabelecimentos (shoppings, restaurantes, bancos, etc), foi definido uma estrutura de Cloud e Fogs que junto com as redes veiculares formam uma rede de conexão de baixa latência que dá o usuário uma maneira rápida e descomplicada de achar local de parada para seu veículo, possibilitando a economia de tempo, combustível e diminuição do tráfego.
+Para este problema, montei uma simulação simplificada de um veículo que define e redefine suas rotas e a aplicação mostra estacionamentos disponíveis próximo de seu destino. A simulação foi feita usando o SUMO (Simulation of Urban Mobility) através de sua interface para Java: TraCI4J.
+}
 
 %%% Introduction %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introdução}
-Este trabalho busca resolver um problema muito comum nos dias de hoje, a busca por um espaço para seu veículo numa determinada localização.
+Se te perguntarem neste momento aonde está seu carro, provavelmente a resposta será: "está estacionado". Segundo o \textit{International Parking Institute} (IPI), veículos privados passam 95\% do tempo parados numa vaga enquantos seus donos trabalham, estudam, comem, dormem, fazem compras ou alguma outra atividade rotineira. Estamos sempre nos movendo, somos afetados diretamente pela localização deixaremos nossos veículos nos destinos.
 
-Todos nós já passamos pela cansativa busca de vagas em estacionamentos perto da localização de algum destino. O problema é que nem sempre os mais próximos possuem vagas ou são os mais baratos. Se fosse apenas um preço fixo, resolveríamos o problema apenas cadastrando o preço de cada estacionamento num banco de dados, mas não resolveria o problema das vagas.
+A cidades estão crescendo, estima-se que em 2030 60\% da população mundial viverá em cidades\cite{IPI_2015}. No terceiro trimestre de 2013 foi estimado que 247,9 milhões de carros caminhões circularam nas ruas, e é esperado que esse numero atinja 284 milhões próximo do ano de 2025. 
+Um estudo realizado numa área de 15 quarteirões na área de Los Angeles, em um ano foram medidas 950 mil milhas rodadas de veículos a procura de vagas. Para se ter noção da quantidade, isso é equivalente a 38 voltas no Planeta Terra.
+Não podemos deixar de citar que além dos problemas do trânsito, isso tem um impacto imenso na quantidade de emissão de gases de efeito estufa. Várias cidades e grandes centros já estão se movimentando e considerando vagas para estacionar uma grande preocupação em seus planejamentos.
 
-O caso das vagas é mais complexo pois podemos ter vários tipos, por exemplo se é coberta ou não, se é vaga de moto, carro ou para carros maiores. Também poderíamos supor que o preço varia com o tipo da vaga, afinal uma vaga descoberta de moto não deve pagar o mesmo preço de uma vaga coberta para uma caminhonete \textit{heavy duty}.
+Com isso em mente, foi pensado um modelo de aplicação que roda na nuvem e se comunica com os estabelecimentos na periferia da rede (Fog) para encontrar vagas para o motorista \cite{Hong_2015} e feito uma simulação simplificada da aplicação usando a ferramenta SUMO \cite{SUMO}. Será desenvolvido o modelo proposto, metodologia e ferramentas usadas nas próximas seções.
 
-A solução encontrada foi criar uma camada de \textit{Fog} (Névoa) em que estarão os servidores dos estacionamentos disponíveis para comunicação com a Nuvem para a obtenção desse tipo informações em tempo real.
+
 
 %%% Motivação
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
