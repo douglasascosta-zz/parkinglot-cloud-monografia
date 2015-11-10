@@ -16,7 +16,14 @@ VanDung Nguyen Nguyen H. Tran Choong Seon~Hong Oanh Tran Thi~Kim, Nguyen
 \bibitem{SUMO}
 Institute of~Transportation~Systems.
 \newblock Simulation of urban mobility.
-\newblock 2015.
+\newblock \url{http://sumo.dlr.de/wiki/Main_Page}, 2015.
+\newblock [Online; accessed 09-November-2015].
+
+\bibitem{VANET}
+George Corser.
+\newblock Vanet introduction.
+\newblock \url{https://www.youtube.com/watch?v=DrH-1505-Mg}, 2013.
+\newblock [Online; accessed 09-November-2015].
 
 \bibitem{Ni_2008}
 Kai Ni, Anitha Kannan, Antonio Criminisi, and John Winn.

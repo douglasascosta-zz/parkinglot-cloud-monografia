@@ -52,12 +52,17 @@ Com isso em mente, foi pensado um modelo de aplicação que roda na nuvem e se com
 
 %%% Motivação
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Justificativa}
-Motivação. 
+\section{Conceitos}
+Aqui usamos alguns conceitos de IoT e VANETs, Cloud e Fog.
+\textit{Internet of Things} descreve uma visão da rede mundial de computadores como uma rede central acessada por todo tipo de \textit{smart objects}, ou seja, qualquer dispositivo "esperto" o suficiente para se conectar a internet e trocar informações com outros dispositivos. Em nosso modelo temos variados deles, desde veículos e servidores até sensores de vagas, que conectados por Bluetooth ou WiFi informarão se temos ou não vagas disponíveis.
+Restringindo para o caso dos veículos, podemos falar de VANET (Vehicular ad hoc network) que é uma rede distribuída de intercomunicação entre os veículos\cite{VANET}. Além de entre si, comunicam-se também com as RSUs (Roadside Units), unidades a beira da estrada que concentram informações locais, têm acesso a internet e se comunicam com a Roadside Cloud, responsável pelo maior processamento de informações. Podem entrar nas VANETs outros dispositivos, como semáforos, praças de pedágios e centrais de trânsitos. 
+As VANETs foram pensadas para diminuir a latência da obtenção de informações: ao invés de todos se concentrarem numa Cloud central, as informações são obtidas localmente com requisições de baixas latências resultando em informações e tomadas de decisões mais rápidas.
+As comunicações entre veículos são usadas para traçar rotas de auto-guiados e para se evitar colisões. No caso de um veículo colidir no meio da via, este consegue imediatamente avisar os mais próximos da via a tempo de evitar acidentes, o que talvez não fosse possível se tivesse de aguardar a nuvem avisar os outros veículos.
+As RSUs são para informações locais, no exemplo acima o veículo parado também informaria a RSU mais próxima (ou outro veículo informado) que passaria a informação adiante, fazendo com que fosse possível avisar para outros veículos antecipadamente sobre um possível engarrafamento e sugerir rotas alternativas. Estes dados também seriam sincronizados com a Cloud para que esta pudesse acionar as autoridades competentes (ambulância, bombeiros, polícia) e mais tarde sejam analisados mais de uma maneira mais específica pelo departamento de trânsito ou pela concessionária da via, como por exemplo detectar áreas de maior perigo e decidir onde colocar semáforos, rotatórias ou diminuir a velocidade máxima permitida no trecho.
 
 %%% Add section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Objetivos}
-Objetivos.
+
 
 \section{Desenvolvimento do Trabalho}
 Experimentos.
@@ -88,40 +93,40 @@ Example of a figure spanning two columns.
 \end{center} 
 \end{figure*}
 
-Example of a table spanning only one column: 
+%Example of a table spanning only one column: 
+%
+%\begin{table}
+%\begin{center}
+%\begin{tabular}{l*{6}{c}r}
+%Team              & P & W & D & L & F  & A & Pts \\
+%\hline
+%Manchester United & 6 & 4 & 0 & 2 & 10 & 5 & 12  \\
+%Celtic            & 6 & 3 & 0 & 3 &  8 & 9 &  9  \\
+%Benfica           & 6 & 2 & 1 & 3 &  7 & 8 &  7  \\
+%FC Copenhagen     & 6 & 2 & 1 & 2 &  5 & 8 &  7  \\
+%\end{tabular}
+%\end{center}
+%\end{table}
 
-\begin{table}
-\begin{center}
-\begin{tabular}{l*{6}{c}r}
-Team              & P & W & D & L & F  & A & Pts \\
-\hline
-Manchester United & 6 & 4 & 0 & 2 & 10 & 5 & 12  \\
-Celtic            & 6 & 3 & 0 & 3 &  8 & 9 &  9  \\
-Benfica           & 6 & 2 & 1 & 3 &  7 & 8 &  7  \\
-FC Copenhagen     & 6 & 2 & 1 & 2 &  5 & 8 &  7  \\
-\end{tabular}
-\end{center}
-\end{table}
-
-Example of a table spanning two columns: 
-
-\begin{table*}
-\begin{center}
-    \begin{tabular}{ | l | l | l | p{8cm} |}
-    \hline
-    Day & Min Temp & Max Temp & Summary \\ \hline
-    Monday & 11C & 22C & A clear day with lots of sunshine.  
-    However, the strong breeze will bring down the temperatures. \\ \hline
-    Tuesday & 9C & 19C & Cloudy with rain, across many northern regions. Clear spells
-    across most of Scotland and Northern Ireland,
-    but rain reaching the far northwest. \\ \hline
-    Wednesday & 10C & 21C & Rain will still linger for the morning.
-    Conditions will improve by early afternoon and continue
-    throughout the evening. \\
-    \hline
-    \end{tabular}
-\end{center}    
-\end{table*}
+%Example of a table spanning two columns: 
+%
+%\begin{table*}
+%\begin{center}
+%    \begin{tabular}{ | l | l | l | p{8cm} |}
+%    \hline
+%    Day & Min Temp & Max Temp & Summary \\ \hline
+%    Monday & 11C & 22C & A clear day with lots of sunshine.  
+%    However, the strong breeze will bring down the temperatures. \\ \hline
+%    Tuesday & 9C & 19C & Cloudy with rain, across many northern regions. Clear spells
+%    across most of Scotland and Northern Ireland,
+%    but rain reaching the far northwest. \\ \hline
+%    Wednesday & 10C & 21C & Rain will still linger for the morning.
+%    Conditions will improve by early afternoon and continue
+%    throughout the evening. \\
+%    \hline
+%    \end{tabular}
+%\end{center}    
+%\end{table*}
 
 %%% Add section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Trabalhos futuros}
