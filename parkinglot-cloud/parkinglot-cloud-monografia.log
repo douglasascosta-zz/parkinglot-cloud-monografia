@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.9.30)  11 NOV 2015 23:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.9.30)  28 NOV 2015 21:21
 entering extended mode
 **parkinglot-cloud-monografia.tex
 (parkinglot-cloud-monografia.tex
@@ -429,15 +429,9 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 174.
  (parkinglot-cloud-monografia.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 174.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 174.
-
-
-Package rerunfilecheck Warning: File `parkinglot-cloud-monografia.brf' has chan
-ged.
-(rerunfilecheck)                Rerun to get bibliographical references right.
-
-Package rerunfilecheck Info: Checksums for `parkinglot-cloud-monografia.brf':
-(rerunfilecheck)             Before: 55E6B284C6F01A193A7B70F3F37E31E3;421
-(rerunfilecheck)             After:  07AD2A079ABBDA16C45A94119A230ED9;421.
+Package rerunfilecheck Info: File `parkinglot-cloud-monografia.brf' has not cha
+nged.
+(rerunfilecheck)             Checksum: 07AD2A079ABBDA16C45A94119A230ED9;421.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 174.
  ) 
 Here is how much of TeX's memory you used:
@@ -453,7 +447,7 @@ m Files (x86)/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files (
 x86)/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files (x86)/MiKTeX
  2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
 type1/urw/times/utmri8a.pfb>
-Output written on parkinglot-cloud-monografia.pdf (5 pages, 1001987 bytes).
+Output written on parkinglot-cloud-monografia.pdf (5 pages, 1001984 bytes).
 PDF statistics:
  100 PDF objects out of 1000 (max. 8388607)
  27 named destinations out of 1000 (max. 500000)

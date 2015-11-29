@@ -1,0 +1,44 @@
+\begin{thebibliography}{}
+
+\bibitem[Boulic and Renault 1991]{boulic:91}
+Boulic, R. and Renault, O. (1991).
+\newblock 3d hierarchies for animation.
+\newblock In Magnenat-Thalmann, N. and Thalmann, D., editors, {\em New Trends
+  in Animation and Visualization}. John Wiley {\&} Sons ltd.
+
+\bibitem[Corser 2013]{VANET}
+Corser, G. (2013).
+\newblock Vanet introduction.
+\newblock \url{https://www.youtube.com/watch?v=DrH-1505-Mg}.
+\newblock [Online; accessed 09-November-2015].
+
+\bibitem[Institute 2014]{IPI_2015}
+Institute, I.~P. (2014).
+\newblock Why parking matters.
+\newblock {\em The Role of Parking in Our Future Cities}.
+
+\bibitem[Knuth 1984]{knuth:84}
+Knuth, D.~E. (1984).
+\newblock {\em The {\TeX} Book}.
+\newblock Addison-Wesley, 15th edition.
+
+\bibitem[Oanh Tran Thi~Kim 2015]{Hong_2015}
+Oanh Tran Thi~Kim, Nguyen Dang~Tri, V. N. N. H. T. C. S.~H. (2015).
+\newblock A shared parking model in vehicular network using fog and cloud
+  environment.
+\newblock {\em Network Operations and Management Symposium (APNOMS), 2015 17th
+  Asia-Pacific}, pages 321--326.
+
+\bibitem[of~Transportation~Systems 2015]{SUMO}
+of~Transportation~Systems, I. (2015).
+\newblock Simulation of urban mobility.
+\newblock \url{http://sumo.dlr.de/wiki/Main_Page}.
+\newblock [Online; accessed 09-November-2015].
+
+\bibitem[Smith and Jones 1999]{smith:99}
+Smith, A. and Jones, B. (1999).
+\newblock On the complexity of computing.
+\newblock In Smith-Jones, A.~B., editor, {\em Advances in Computer Science},
+  pages 555--566. Publishing Press.
+
+\end{thebibliography}
