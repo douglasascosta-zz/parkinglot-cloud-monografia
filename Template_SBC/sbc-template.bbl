@@ -1,44 +1,60 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{1}
 
-\bibitem[Boulic and Renault 1991]{boulic:91}
-Boulic, R. and Renault, O. (1991).
-\newblock 3d hierarchies for animation.
-\newblock In Magnenat-Thalmann, N. and Thalmann, D., editors, {\em New Trends
-  in Animation and Visualization}. John Wiley {\&} Sons ltd.
-
-\bibitem[Corser 2013]{VANET}
-Corser, G. (2013).
-\newblock Vanet introduction.
-\newblock \url{https://www.youtube.com/watch?v=DrH-1505-Mg}.
-\newblock [Online; accessed 09-November-2015].
-
-\bibitem[Institute 2014]{IPI_2015}
-Institute, I.~P. (2014).
+\bibitem{IPI_2015}
+International~Parking Institute.
 \newblock Why parking matters.
-\newblock {\em The Role of Parking in Our Future Cities}.
+\newblock {\em The Role of Parking in Our Future Cities}, 2014.
 
-\bibitem[Knuth 1984]{knuth:84}
-Knuth, D.~E. (1984).
-\newblock {\em The {\TeX} Book}.
-\newblock Addison-Wesley, 15th edition.
-
-\bibitem[Oanh Tran Thi~Kim 2015]{Hong_2015}
-Oanh Tran Thi~Kim, Nguyen Dang~Tri, V. N. N. H. T. C. S.~H. (2015).
+\bibitem{Hong_2015}
+VanDung Nguyen Nguyen H. Tran Choong Seon~Hong Oanh Tran Thi~Kim, Nguyen
+  Dang~Tri.
 \newblock A shared parking model in vehicular network using fog and cloud
   environment.
 \newblock {\em Network Operations and Management Symposium (APNOMS), 2015 17th
-  Asia-Pacific}, pages 321--326.
+  Asia-Pacific}, pages 321--326, 2015.
 
-\bibitem[of~Transportation~Systems 2015]{SUMO}
-of~Transportation~Systems, I. (2015).
+\bibitem{SUMO}
+Institute of~Transportation~Systems.
 \newblock Simulation of urban mobility.
-\newblock \url{http://sumo.dlr.de/wiki/Main_Page}.
+\newblock \url{http://sumo.dlr.de/wiki/Main_Page}, 2015.
 \newblock [Online; accessed 09-November-2015].
 
-\bibitem[Smith and Jones 1999]{smith:99}
-Smith, A. and Jones, B. (1999).
-\newblock On the complexity of computing.
-\newblock In Smith-Jones, A.~B., editor, {\em Advances in Computer Science},
-  pages 555--566. Publishing Press.
+\bibitem{CISCO_IOT}
+Cisco.
+\newblock Value of the internet of everything for cities, states \& countries.
+\newblock
+  \url{http://internetofeverything.cisco.com/vas-public-sector-infographic/},
+  2015.
+\newblock [Online; accessed 09-November-2015].
+
+\bibitem{VANET}
+George Corser.
+\newblock Vanet introduction.
+\newblock \url{https://www.youtube.com/watch?v=DrH-1505-Mg}, 2013.
+\newblock [Online; accessed 09-November-2015].
+
+\bibitem{FOG_BONOMI}
+Jiang Zhu Sateesh~Addepalli Flavio~Bonomi, Rodolfo~Milito.
+\newblock Fog computing and its role in the internet of things.
+\newblock 2014.
+
+\bibitem{TRACI_PYTHON}
+Institute of~Transportation~Systems.
+\newblock Traci for python.
+\newblock \url{http://sumo.dlr.de/wiki/TraCI/Interfacing_TraCI_from_Python},
+  2015.
+\newblock [Online; accessed 09-November-2015].
+
+\bibitem{TRACI4J}
+Enrico Gueli.
+\newblock Traci4j.
+\newblock \url{https://github.com/egueli/TraCI4J}, 2015.
+\newblock [Online; accessed 09-November-2015].
+
+\bibitem{TRACI_WEBSERVICE}
+Institute of~Transportation~Systems.
+\newblock Traas - traci as a service.
+\newblock \url{http://traas.sourceforge.net/cms/}, 2015.
+\newblock [Online; accessed 09-November-2015].
 
 \end{thebibliography}
