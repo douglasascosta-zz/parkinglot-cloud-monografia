@@ -277,10 +277,10 @@ No caso dos POIs, os que não estão disponíveis no momento para aquele veículo es
 
 Logo que o carro é inserido na simulação, é levantado uma flag que representa a solicitação de vaga por parte do usuário para a aplicação. Quando a aplicação detecta a flag, ela analisa a rota do veículo e baseado no seu destino informa os estacionamentos com vagas disponíveis naquele momento.
 
-A aplicação verifica se há estacionamentos num raio de 110m (pouco mais que um quarteirão) de distância do destino do veículo. Se houver ele simula uma comunicação com o servidor do estacionamento perguntando por vagas e este responde quantas ele tem disponível. Se possuir pelo menos uma vaga disponível, o POI que o representa é pintado de verde claro, caso contrário mantem-se na cor vermelha.
+A aplicação verifica se há estacionamentos num raio de 110m (pouco mais que um quarteirão) de distância do destino do veículo: itera em cada estacionamento de sua área e verifica a distância espacial de cada um até a coordenada referente ao destino. O raio da busca de estacionamentos foi escolhido para esta simulação pelo fato de pegar pouco mais que um quarteirão na via, caso haja um estacionamento na próxima esquina.\\
+Se encontrar estacionamentos disponíveis, é simulada uma comunicação da aplicação com o servidor do estacionamento requisitando vagas. Se ele responder que possui pelo menos uma vaga disponível, o POI que o representa é pintado de verde claro, caso contrário mantem-se na cor vermelha.
 
-Para efeitos de simulação, foi configurado para o veículo escolhido mudar sua rota a cada 40 passos. Quando isto acontece, é levantada a flag novamente, que representa a solicitação de vaga para a aplicação na névoa e este refaz o processo de verificação de vaga.
-
+Para efeitos de simulação, foi configurado para o veículo escolhido mudar sua rota a cada 40 passos. Quando isto acontece, é levantada a flag novamente, que representa a solicitação de vaga para a aplicação na névoa e este refaz o processo de verificação de vaga.\\
 A simulação termina quando o carro principal chega em seu destino (e provavelmente estaciona).
 
 \begin{figure}
@@ -292,9 +292,14 @@ A simulação termina quando o carro principal chega em seu destino (e provavelmen
 
 Para o deploy da névoa, foi feito pensado varias VMs Ubuntu (ou Debian), cada uma rodando uma instância do servidor com a aplicação em questão responsável por uma área de de 900m\textsuperscript{2}.\\ Caso o destino do usuário esteja em outra área, a comunicação é simulada por escrita e leitura em arquivos.
 
-\clearpage
 
 \section{Resultados}
+
+Podemos ver o exemplo da simulação da figura 12 em diante. As três primeiras são do primeiro passo, onde o carro é adicionado na simulação e a aplicação descobre estacionamentos disponíveis pela primeira vez.\\
+Nas outras três temos o passo 40 que é onde o veículo resolve mudar a rota e avisa a aplicação através da flag e esta recalcula estacionamentos disponíveis.\\
+Na última imagem podemos ver o carro já próximo de seu destino com 2 estacionamentos próximos com vagas para poder escolher.
+
+Uma pendência importante no trabalho é que, até esta data, não foi possível configurar o ambiente para rodar uma simulação com mais de uma VM de névoa e fazê-las comunicarem entre si. Portanto as simulações rodaram com destinos apenas dentro de sua área de atuação, como algo modular. Mas com uma unidade sólida e funcionando não será difícil escalá-la.
 
 \begin{figure}
 	\begin{center}
@@ -343,20 +348,42 @@ Para o deploy da névoa, foi feito pensado varias VMs Ubuntu (ou Debian), cada um
 	\end{center} 
 \end{figure} 
 
-
-Podemos ver o exemplo da simulação da figura 12 em diante. As três primeiras são do primeiro passo, onde o carro é adicionado na simulação e a aplicação descobre estacionamentos disponíveis pela primeira vez.\\
-Nas outras três temos o passo 40 que é onde o veículo resolve mudar a rota e avisa a aplicação através da flag e esta recalcula estacionamentos disponíveis.\\
-Na última imagem podemos ver o carro já próximo de seu destino com 2 estacionamentos próximos com vagas para poder escolher.
-
-Uma pendência importante no trabalho é que, até esta data que lhes escrevo, não foi possível configurar o ambiente para rodar uma simulação com mais de uma VM de névoa e fazê-las comunicarem entre si. Portanto as simulações rodaram com destinos apenas dentro de sua área de atuação, como algo modular. Mas acredito que com a unidade funcionando, não deve ser difícil escalá-la.
-
 \newpage
 
 \section{Trabalhos futuros}
 
+Até aqui pudemos verificar vários pontos do trabalho onde podemos sofisticar até termos algo mais palpável e próximo do mundo real em que realmente poderíamos ter resultados consideráveis.\\
+Na simulação foi utilizada uma área simplificada de 9x9 quarteirões quadrados, o que poderia ser sofisticada para uma maior ou com maior complexidade de vias. Foram utilizadas apenas vias de mão dupla com cruzamentos 90º e alguns semáforos, faltam rotatórias, quarteirões irregulares e outras sinalizações que poderiam mudar todo o contexto, se por exemplo um estacionamento que fica numa área que está com congestionamento no momento e difícil acesso pode ser descartado ou entrar como menor prioridade nos resultados.
+
+Como objetos da simulação foram utilizados apenas veículos de passeio, se fossem adicionados outros tipos como caminhões, transporte público, ciclistas e pedestres (dependendo das limitações da ferramenta), poderia ser gerado um ecossistema muito mais complexo que simularia todo tipo de ocasião influenciável na decisão de vaga.
+
+Poderíamos aprimorar a avaliação viabilidade dos estacionamentos por exemplo, sendo considerada a distância que seria percorrida pela via do destino até lá e não somente em linha reta. Também consideraria a sinalização da via, pois mesmo um estacionamento sendo mais longe do destino, este pode ser mais viável por estar na mesma mão da via que o veículo vai estar ao invés do carro ter que ir adiante fazer retorno ou dar a volta no quarteirão (para vias de mão única).\\
+Melhor ainda seria adicionar funcionalidades novas, a aplicação poderia aceitar mais de um destino e procuraria um estacionamento que é no meio do caminho, que têm distância similares para todos eles.
+
+
+Também o próprio estacionamento em si pode ser muito sofisticado e agregar mais informações sobre:
+\begin{itemize}
+	\item preço: um dos primeiros fatores que influenciam numa escolha de estacionamento;
+	\item tipo da vaga: se a vaga é coberta ou a céu aberto, dependendo do clima do momento, uma é pode ser bem mais atrativa do que a outra;
+	\item tamanho da vaga: se você está andando de caminhonete \textit{heavy duty} ou de moto, você precisa de uma vaga específica;
+	\item horário de funcionamento: uma informação que é muito negligenciada pelas pessoas, mas dependendo do horário que precisa ser utilizado vai limitar totalmente as opções disponíveis;
+	\item reserva de vaga: se o usuário confirmar que vai utilizá-la, não seria legal ela não estar disponível no momento em que chegar no local;
+	\item pagamento: a aplicação aceitando pagamento para os estacionamentos como uma intermediária, pode aumentar a confiabilidade dos estabelecimentos além de economizar tempo pelo fato de poder ser realizado com um clique;
+	\item avaliação: desde o atendimento até o cuidado com seu veículo poderia ser informado por outros usuário que já utilizaram o lugar.
+\end{itemize}
+
+Além de todos esses detalhes que poderiam ser agregados na simulação, temos o fato das comunicações em si. Se tivermos implementado comunicações reais entre cada ponto da névoa entre si e com os estacionamentos, teríamos a avaliação real da utilidade na névoa nesse contexto: tempo de processamento, tempo de resposta, informações baseadas nos eventos da localidade.
+
+Cada sugestão citada aqui pode ser usada para melhorar mais e mais a simulação, mas isso não quer dizer que o modelo não possa ser aperfeiçoado e ser utilizado com outros propósitos e com novas tecnologias além do ramo de estacionamentos.
+
 \newpage
 
 \section{Conclusão}
+
+
+
+
+
 
 \newpage
 
