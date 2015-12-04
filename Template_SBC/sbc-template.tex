@@ -93,14 +93,14 @@ Campinas\\}
 
 
 \begin{abstract}
-  Basing in a model of sensors and servers in the parking lots of establishments (shopping malls, restaurant, banks, etc), was designed a Cloud and Fog infrastructure that, along with the vehicular networks, are a fast and low latency communication network that is, the common person, a fast and reliable way to find a parking spot, saving time, fuel and generating less traffic.\\
-  For this problem, I designed a simplified simulation of a vehicle that changes its routes and an application that show available parking spots near its destination. The simulation was made using SUMO (Simulation of Urban Mobility) by its Java interface TraCI4J.
+  Basing in a model of sensors and servers in the parking lots of establishments (shopping malls, restaurant, banks, etc), it was designed a Cloud and Fog infrastructure that, along with the vehicular networks, are a fast and low latency communication network that provides to the common user a fast and reliable way to find a parking spot for a vehicle, saving time, fuel and generating less traffic.\\
+  For this problem I designed a simplified simulation of a vehicle that changes its routes and an application that show available parking spots near its destination. The simulation was made using SUMO (Simulation of Urban Mobility) by its Java interface TraCI4J.
 \end{abstract}
 
 \vskip2cm
      
 \begin{resumo} 
-  Baseando-se num modelo de sensores e servidores presentes nos estacionamentos de estabelecimentos (shoppings, restaurantes, bancos, etc), foi desenvolvido uma estrutura de Cloud(nuvem) e Fog(névoa) que, junto com as redes veiculares, formam uma rede de conexão de baixa latência que dá o usuário uma maneira rápida e confiável de achar uma vaga de estacionamento para seu veículo, possibilitando uma maior economia de tempo, combustível e diminuição do tráfego.\\
+  Baseando-se num modelo de sensores e servidores presentes nos estacionamentos de estabelecimentos (shoppings, restaurantes, bancos, etc), foi desenvolvido uma estrutura de Cloud(nuvem) e Fog(névoa) que, junto com as redes veiculares, formam uma rede de conexão de baixa latência que fornece ao usuário comum uma maneira rápida e confiável de achar uma vaga de estacionamento para seu veículo, possibilitando uma maior economia de tempo, combustível e diminuição do tráfego.\\
   Para este problema, montei uma simulação simplificada de um veículo que muda suas rotas e uma aplicação que mostra vagas estacionamentos disponíveis próximo de seu destino. A simulação foi feita usando o SUMO (Simulation of Urban Mobility) através de sua interface para Java, TraCI4J.
 \end{resumo}
 
@@ -108,14 +108,14 @@ Campinas\\}
 
 \section{Introdução}
 
-Se te perguntarem neste momento aonde está seu carro, provavelmente a resposta será: "está estacionado". Segundo o \textit{International Parking Institute} (IPI), veículos privados passam 95\% do tempo parados numa vaga enquantos seus donos trabalham, estudam, comem, dormem, fazem compras ou alguma outra atividade rotineira. Estamos sempre nos movendo, somos afetados diretamente pela localização onde deixamos nossos veículos perto de nossos destinos.
+Se te perguntarem neste momento aonde está seu carro, provavelmente a resposta será: "está estacionado". Segundo o \textit{International Parking Institute} (IPI), veículos privados passam 95\% do tempo parados numa vaga enquantos seus donos trabalham, estudam, comem, dormem, fazem compras ou realizam alguma outra atividade rotineira. Estamos sempre nos movendo, somos afetados diretamente pela localização onde deixamos nossos veículos em nossos destinos.
 
-A cidades estão crescendo, estima-se que em 2030 60\% da população mundial viverá em cidades\cite{IPI_2015}. No terceiro trimestre de 2013 foi estimado que 247,9 milhões de carros caminhões circularam nas ruas, e é esperado que esse numero atinja 284 milhões próximo do ano de 2025. \\
-Em um estudo realizado numa área de 15 quarteirões na área de Los Angeles, em um ano foram medidas 950 mil milhas rodadas de veículos a procura de vagas. Para se ter noção da quantidade, isso é equivalente a 38 voltas no Planeta Terra.
+A cidades estão crescendo, estima-se que no ano de 2030 60\% da população mundial viverá em cidades \cite{IPI_2015}. No terceiro trimestre de 2013 foi estimado que 247,9 milhões de veículos circularam nas ruas, e é esperado que esse numero atinja 284 milhões próximo do ano de 2025. \\
+Em um estudo realizado numa área de 15 quarteirões na área de Los Angeles, em um ano foram medidas 950 mil milhas rodadas por veículos a procura de vagas. Para se ter noção da quantidade, isto é equivalente a 38 voltas no Planeta Terra.
 
 Não podemos deixar de citar que além dos problemas do trânsito, isso tem um impacto imenso na quantidade de emissão de gases de efeito estufa. Várias cidades e grandes centros já estão tomando iniciativas e considerando vagas para estacionar uma grande preocupação em seus planejamentos.
 
-Com isso em mente, foi pensado um modelo de aplicação que roda na névoa e se comunica com os estabelecimentos com estacionamentos para encontrar vagas para o motorista \cite{Hong_2015} e feito uma simulação simplificada da aplicação funcionando usando a ferramenta SUMO \cite{SUMO}.
+Com isso em mente, foi pensado um modelo de aplicação que roda na névoa e se comunica com os estabelecimentos que possuem estacionamentos para encontrar vagas para o motorista \cite{Hong_2015} e feito uma simulação simplificada da aplicação funcionando usando a ferramenta SUMO, usada para simulações de trânsito \cite{SUMO}.
 
 \newpage
 
@@ -128,17 +128,17 @@ Recentemente a Cisco expandiu sua definição para Internet of Everything (IoE), o
 Em nosso modelo temos variados dispositivos, desde veículos e servidores até sensores de vagas, que conectados por Bluetooth ou WiFi informarão se temos ou não vagas disponíveis.
 
 \subsection{VANET}
-Restringindo para o caso dos veículos, podemos falar de VANET (Vehicular ad hoc network) que é uma rede distribuída de intercomunicação entre os veículos\cite{VANET}. Além de entre si, comunicam-se também com as RSUs (Roadside Units), unidades a beira da estrada que concentram informações locais, têm acesso a internet e se comunicam com a Roadside Cloud, a unidade central das RSUs responsável pelo maior processamento de informações. Podem entrar nas VANETs outros dispositivos, como semáforos, praças de pedágios e centrais de trânsitos. 
+Restringindo para o caso dos veículos, podemos falar de VANET (Vehicular ad hoc network) que é uma rede distribuída de intercomunicação entre os veículos \cite{VANET}. Além de entre si, podem se comunicar também com as RSUs (Roadside Units), unidades a beira da estrada que concentram informações locais, têm acesso a internet e se comunicam com a Roadside Cloud, a unidade central das RSUs responsável pelo maior processamento de informações. Podem entrar nas VANETs outros dispositivos, como semáforos, praças de pedágios e centrais de trânsitos. 
 
 As VANETs foram pensadas para diminuir a latência da obtenção de informações: ao invés de todos se concentrarem numa nuvem central, as informações são obtidas localmente com requisições de baixas latências resultando em informações mais precisas e tomadas de decisões mais rápidas.\\
-As comunicações entre veículos são usadas para traçar rotas de auto-guiados e para se evitar colisões. No caso de um veículo colidir no meio da via, este consegue imediatamente avisar os mais próximos da via a tempo de evitar acidentes, o que talvez não fosse possível se tivesse de aguardar a nuvem avisar os outros veículos.
+As comunicações entre veículos são usadas principalmente para obter informações de trânsito e evitar colisões. No caso de um veículo colidir no meio da via, este consegue imediatamente avisar os mais próximos da via a tempo de evitar acidentes, o que talvez não fosse possível se tivesse de aguardar a nuvem avisar os outros veículos.
 
 \subsection{RSU}
-As RSUs são para informações locais, no exemplo acima do acidente, o veículo parado também informaria a RSU mais próxima que passaria a informação adiante, fazendo com que fosse possível avisar para outros carros da via antecipadamente sobre um possível engarrafamento e sugerir rotas alternativas. \\
-Estes dados também seriam sincronizados com a Roadside Cloud para que esta pudesse acionar as autoridades competentes (ambulância, bombeiros, polícia) e mais tarde sejam analisados mais de uma maneira mais específica pelo departamento de trânsito ou pela concessionária da via, como por exemplo detectar áreas de maior perigo e decidir onde colocar semáforos, rotatórias ou diminuir a velocidade máxima permitida no trecho.
+As RSUs são para informações locais, para o caso da colisão o veículo parado informaria também a RSU mais próxima que passaria a informação adiante, fazendo com que fosse possível avisar para outros carros mais distantes da via antecipadamente sobre um possível engarrafamento e sugerir rotas alternativas. \\
+Estes dados também seriam sincronizados com a Roadside Cloud para que esta pudesse acionar as autoridades competentes (ambulância, bombeiros, polícia) e mais tarde sejam analisados mais de uma maneira mais específica pelo departamento de trânsito ou pela concessionária da via. Um exemplo é detectar áreas de maior perigo e decidir onde colocar semáforos, rotatórias ou diminuir a velocidade máxima permitida no trecho.
 
 \subsection{Névoa computacional}
-Tudo isso nos leva ao conceito de Névoa (Fog) que deriva seu comportamento da Nuvem (Cloud) e o realiza de forma mais distribuída nas bordas da rede. O termo névoa é por ser uma nuvem mais próxima do chão, que é análogo ao seu conceito de uma nuvem menos densa e mais distribuída \cite{FOG_BONOMI}.
+Tudo isso nos leva ao conceito de Névoa (Fog) que deriva seu comportamento da Nuvem (Cloud) e realiza seu processamento de forma mais distribuída nas bordas da rede. O termo névoa é por ser uma nuvem mais próxima do chão, que é análogo ao seu conceito de uma nuvem menos densa e mais distribuída \cite{FOG_BONOMI}.
 
 \begin{figure}
 	\begin{center}
@@ -151,7 +151,7 @@ Se caracteriza por ser uma plataforma altamente virtualizada que provê processam
 \begin{itemize}
 	\item Localização na borda da rede;
 	\item Distribuída geograficamente: em maior quantidade e em mais locais;
-	\item Consciência de seu local: sabe de sua localização e ela importa no processamento e tomadas de decisão;
+	\item Autoconsciência de sua localização: sabe de sua localização e de sua importância no tratamento dos dados e nas tomadas de decisão;
 	\item Baixa latência: consequência da menor distância geográfica dos dispositivos;	
 	\item Menor tempo de resposta: como tem em maior quantidade, cada uma processa bem menos quantidade de informações.
 \end{itemize}
@@ -171,38 +171,35 @@ Com a névoa podemos desafogar a nuvem, termos repostas mais rápidas e ainda a ma
 \section{Modelo}
 O modelo proposto em \cite{Hong_2015} foi pensado para vagas de estacionamento compartilhadas entre vários tipos de estabelecimentos. Sendo estes próximos mas de seguimentos variados poderiam compartilhar vagas de estacionamento, visto que operariam com maior público em horários diferentes. Por exemplo uma casa noturna pode ter vagas compartilhadas com um banco ou salão de beleza. O salão e o banco têm públicos diurnos, enquanto a outra possui maior movimento a noite. Na prática isto já existe, porém são apenas acordos informais e convênios fechados entre poucos estabelecimentos.
 
-O modelo propõe uma aplicação rodando que recebe as solicitações de vagas dos usuários e se comunica com os estabelecimentos para descobrir vagas. Essa aplicação estaria rodando no nível de névoa, pois seria responsável por apenas uma área definida, com outros servidores rodando para outras localizações.
+O modelo propõe uma aplicação rodando que recebe as solicitações de vagas dos usuários e se comunica com os estabelecimentos para encontrar vagas. Essa aplicação estaria rodando no nível de névoa, pois seria responsável por apenas uma área definida, com outras instâncias em outros servidores rodando para outras localizações.
 
-Essa aplicação terá acesso a um banco de dados, com os estacionamentos em sua área de atuação previamente cadastrados e o endereço de comunicação com seus servidores (ip e porta).\\
+Essa aplicação terá acesso a um banco de dados com os estacionamentos em sua área de atuação previamente cadastrados e o endereço de comunicação com seus servidores (ip e porta).\\
 Ao ser solicitado uma vaga pelo usuário que está em sua área, a aplicação analisa o destino de sua rota e se também for dentro dentro de seu alcance, ela se comunica com os estacionamentos próximos e informa o usuário.\\
 Se o destino do usuário for para outra localização, o servidor deste local informa o servidor responsável.
 
 Para cada estabelecimento teríamos um servidor de baixo custo responsável pela gerência das vagas dos mesmos. A ideia é que sensores sejam usados nas vagas e se comuniquem com este servidor local por tecnologias sem fio. \\
-Estes servidores estariam conectados a internet e previamente cadastrados num banco de dados e receberiam requisições da aplicação por vagas disponíveis em seus estabelecimentos. Estabelecimentos no plural, pois os próximos poderiam compartilhar a mesma máquina física de baixo custo como servidor, podendo conter várias VMs cada uma com instância escutando requisições em portas diferentes. 
+Estes servidores estariam conectados a internet, previamente cadastrados num banco de dados e receberiam requisições da aplicação por vagas disponíveis em seus estabelecimentos. Estabelecimentos no plural, pois os próximos poderiam compartilhar a mesma máquina física de baixo custo como servidor, podendo conter várias máquinas virtuais cada qual com uma instância escutando requisições em portas diferentes.
 
-Os sensores teriam a capacidade de saber se a vaga está ocupada ou não. Podem ser utilizados sensores simples de proximidade com comunicação Bluetooth, ou qualquer outra tecnologia sem fio, até sistemas de análise de imagem usando as próprias câmera de vigilância.
+Os sensores teriam a capacidade de saber se a vaga está livre. Podem ser utilizados sensores simples de proximidade com comunicação Bluetooth ou qualquer outra tecnologia sem fio até sistemas de vigilância.
 
+\clearpage
 
 \begin{figure}
 	\begin{center}
 		\includegraphics[width=0.99\columnwidth]{images/fog1}
-		\caption{Esquema representando as comunicações entre servidores Fog, RSUs e a Cloud\cite{Hong_2015}.\label{fig:fog1}}   
+		\caption{Esquema representando as comunicações entre veículos, RSUs e servidores da névoa \cite{Hong_2015}.\label{fig:fog1}}   
 	\end{center} 
 \end{figure} 
 
 
-\clearpage
-
-
 \section{Ferramentas}
 	\subsection{SUMO}
-	A simulação facilita a avaliação de modelos de tráfego propostos antes de sua implementação, por exemplo a adição de um semáforo ou cruzamento na via pode ser testado e otimizado antes de ser aplicado no mundo real.\\
+	A simulação de tráfego facilita a avaliação de modelos propostos antes de sua implementação, por exemplo a adição de um semáforo ou cruzamento na via pode ser testado e otimizado antes de ser aplicado no mundo real.\\
 	O SUMO (Simulation of Urban Mobility) \cite{SUMO} é uma ferramenta Open Source criada em 2001 que possibilita a modelagem e testes do modelo como um todo, incluindo veículos, pedestres e transporte público.\\
 	Para a simulação, fui utilizado a versão 0.24 do SUMO e a 2.4 do TraCI4J.
 	
-	Sua configuração é feita em vários arquivos no formato xml, sendo possível informar a rota de cada veículo, sua velocidade média ou instantânea, o mapa das vias, cores dos veículos, os POIs (Pontos de Interesse) que representam os estacionamentos, velocidade da simulação e muitas outras.
-	
-	A simulação é feita em passos, a cada passo os veículos avançam conforme sua rota, é possível analisar o estado da simulação, a posição de cada veículo, sua velocidade, se houve colisão ou mesmo forçar uma e verificar o tráfego gerado por ela. \\
+	Sua configuração é feita em vários arquivos no formato xml, sendo possível informar a rota de cada veículo, sua velocidade média ou instantânea, o mapa das vias, cores dos veículos, os POIs (Pontos de Interesse) que representam os estacionamentos, velocidade da simulação e muitas outras.\\	
+	A simulação é feita em passos, a cada passo os veículos avançam em sua rota. É possível analisar o estado da simulação, a posição de cada veículo, sua velocidade, se houve colisão ou mesmo forçar uma e verificar o tráfego gerado por ela. \\
 	É uma ferramenta muito poderosa, sendo possível analisar até o consumo de CO2 de cada veículo, mas para este trabalho não será considerado.
 	
 	Possui versões para Windows e Linux, para a simulação foi utilizado no Ubuntu 14.04.
@@ -225,9 +222,10 @@ Os sensores teriam a capacidade de saber se a vaga está ocupada ou não. Podem se
 	
 \section{Desenvolvimento e experimentos}
 Para as simulações utilizei um mapa quadrado de 9x9 quarteirões, com 100m\textsuperscript{2} cada. No pacote temos simulações de 200 até 600 carros, mas por motivos visuais, foi utilizado menos carros.\\
-Além dos carros, na simulação foram inseridos POIs (Point of Interest) que representam os estacionamentos cadastrados.
+Além dos veículos, na simulação foram inseridos POIs (Point of Interest) que representam os estacionamentos cadastrados.
 
-Na simulação podemos ter uma visão macro e simplificada do ecossistema. Como foi dito, a aplicação rodará na névoa local, que se comunica com algum usuário aquela área. Esta simulação foca, no comportamento do veículo e sua comunicação com a névoa.\\ 
+Na simulação podemos ter uma visão macro e simplificada do ecossistema. Como foi dito, a aplicação rodará na névoa local, que se comunica com algum usuário aquela área. Esta simulação foca, no comportamento do veículo deste usuário e sua comunicação com a névoa.
+
 Simplificando, consideramos um servidor por estacionamento. A comunicação com os servidores foi simulada como uma escrita em arquivo, quando a aplicação solicita o número de vagas ela dispara um script que escreve num arquivo de texto um número aleatório que representa a quantidade de vagas disponíveis naquele estacionamento. A aplicação lê esse valor e o considera nas decisões.
 
 No início da simulação é escolhido um carro aleatoriamente que vai representar o usuário que precisa de uma vaga de estacionamento. Na interface gráfica este veículo será da cor amarela, enquanto que os outros serão rosa claro.\\
@@ -252,7 +250,7 @@ No caso dos POIs, os que não estão disponíveis no momento para aquele veículo es
 		\includegraphics[width=0.99\columnwidth]{images/sumo4}
 		\caption{Área com 600 carros inseridos na simulação.\label{fig:sumo4}}   
 	\end{center} 
-\end{figure} '
+\end{figure}
 
 \begin{figure}
 	\begin{center}
@@ -275,9 +273,9 @@ No caso dos POIs, os que não estão disponíveis no momento para aquele veículo es
 	\end{center} 
 \end{figure} 
 
-Logo que o carro é inserido na simulação, é levantado uma flag que representa a solicitação de vaga por parte do usuário para a aplicação. Quando a aplicação detecta a flag, ela analisa a rota do veículo e baseado no seu destino informa os estacionamentos com vagas disponíveis naquele momento.
+Logo que o carro é inserido na simulação, é levantado uma flag que representa a solicitação de vaga por parte do usuário para a aplicação. Quando a aplicação detecta a flag ela analisa a rota do veículo e baseando-se em seu destino informa os estacionamentos com vagas disponíveis naquele momento.
 
-A aplicação verifica se há estacionamentos num raio de 110m (pouco mais que um quarteirão) de distância do destino do veículo: itera em cada estacionamento de sua área e verifica a distância espacial de cada um até a coordenada referente ao destino. O raio da busca de estacionamentos foi escolhido para esta simulação pelo fato de pegar pouco mais que um quarteirão na via, caso haja um estacionamento na próxima esquina.\\
+A aplicação verifica se há estacionamentos num raio de 110m de distância do destino do veículo: itera em cada estacionamento de sua área e verifica a distância espacial de cada um até a coordenada referente ao destino. O raio da busca de estacionamentos foi escolhido para esta simulação pelo fato de pegar pouco mais que um quarteirão na via, para caso haja um estacionamento na próxima esquina ele possa ser considerado.\\
 Se encontrar estacionamentos disponíveis, é simulada uma comunicação da aplicação com o servidor do estacionamento requisitando vagas. Se ele responder que possui pelo menos uma vaga disponível, o POI que o representa é pintado de verde claro, caso contrário mantem-se na cor vermelha.
 
 Para efeitos de simulação, foi configurado para o veículo escolhido mudar sua rota a cada 40 passos. Quando isto acontece, é levantada a flag novamente, que representa a solicitação de vaga para a aplicação na névoa e este refaz o processo de verificação de vaga.\\
@@ -290,8 +288,9 @@ A simulação termina quando o carro principal chega em seu destino (e provavelmen
 	\end{center} 
 \end{figure} 
 
-Para o deploy da névoa, foi feito pensado varias VMs Ubuntu (ou Debian), cada uma rodando uma instância do servidor com a aplicação em questão responsável por uma área de de 900m\textsuperscript{2}.\\ Caso o destino do usuário esteja em outra área, a comunicação é simulada por escrita e leitura em arquivos.
+Para o deploy da névoa, foi feito pensado várias maquinas virtuais Ubuntu (ou Debian), cada uma rodando uma instância do servidor com a aplicação em questão responsável por uma área de de 900m\textsuperscript{2}.\\ Caso o destino do usuário esteja em outra área é feita a comunicação entre servidores da origem e do destino, simulada por escrita e leitura em arquivos, para que a última possa buscar vagas para o usuário.
 
+\clearpage
 
 \section{Resultados}
 
@@ -299,7 +298,7 @@ Podemos ver o exemplo da simulação da figura 12 em diante. As três primeiras são
 Nas outras três temos o passo 40 que é onde o veículo resolve mudar a rota e avisa a aplicação através da flag e esta recalcula estacionamentos disponíveis.\\
 Na última imagem podemos ver o carro já próximo de seu destino com 2 estacionamentos próximos com vagas para poder escolher.
 
-Uma pendência importante no trabalho é que, até esta data, não foi possível configurar o ambiente para rodar uma simulação com mais de uma VM de névoa e fazê-las comunicarem entre si. Portanto as simulações rodaram com destinos apenas dentro de sua área de atuação, como algo modular. Mas com uma unidade sólida e funcionando não será difícil escalá-la.
+Uma pendência importante no trabalho é que, até esta data, não foi possível configurar o ambiente para rodar uma simulação com mais de uma máquina virtual de névoa e fazê-las comunicarem entre si. Portanto as simulações rodaram com destinos apenas dentro de sua área de atuação, como algo modular. Mas com uma unidade sólida e funcionando não será difícil escalá-la.
 
 \begin{figure}
 	\begin{center}
@@ -310,7 +309,7 @@ Uma pendência importante no trabalho é que, até esta data, não foi possível conf
 \begin{figure}
 	\begin{center}
 		\includegraphics[width=0.99\columnwidth]{images/sumostep12}
-		\caption{Passo 1: aplicação encontra vagas próximo de seu destino na esquina 3/0 (três quarteiros na horizontal e 0 na vertical).\label{fig:sumostep12}}   
+		\caption{Passo 1: aplicação encontra vagas próximo de seu destino na esquina 3/0 (três quarteirões na horizontal e 0 na vertical).\label{fig:sumostep12}}   
 	\end{center} 
 \end{figure} 
 \begin{figure}
@@ -353,28 +352,28 @@ Uma pendência importante no trabalho é que, até esta data, não foi possível conf
 \section{Trabalhos futuros}
 
 Até aqui pudemos verificar vários pontos do trabalho onde podemos sofisticar até termos algo mais palpável e próximo do mundo real em que realmente poderíamos ter resultados consideráveis.\\
-Na simulação foi utilizada uma área simplificada de 9x9 quarteirões quadrados, o que poderia ser sofisticada para uma maior ou com maior complexidade de vias. Foram utilizadas apenas vias de mão dupla com cruzamentos 90º e alguns semáforos, faltam rotatórias, quarteirões irregulares e outras sinalizações que poderiam mudar todo o contexto, se por exemplo um estacionamento que fica numa área que está com congestionamento no momento e difícil acesso pode ser descartado ou entrar como menor prioridade nos resultados.
+Na simulação foi utilizada uma área simplificada de 9x9 quarteirões quadrados, o que poderia ser sofisticada para uma maior ou com maior complexidade de vias. Foram utilizadas apenas vias de mão dupla com cruzamentos 90º e alguns semáforos. Faltam rotatórias, quarteirões irregulares e outras sinalizações que poderiam mudar todo o contexto, como um estacionamento que fica numa área de difícil acesso e congestionada no momento pode ser descartado ou entrar como menor prioridade nos resultados.
 
-Como objetos da simulação foram utilizados apenas veículos de passeio, se fossem adicionados outros tipos como caminhões, transporte público, ciclistas e pedestres (dependendo das limitações da ferramenta), poderia ser gerado um ecossistema muito mais complexo que simularia todo tipo de ocasião influenciável na decisão de vaga.
+Como objetos da simulação foram utilizados apenas veículos de passeio, se fossem adicionados outros tipos como caminhões, transporte público, ciclistas e pedestres, poderia ser gerado um ecossistema muito mais complexo que simularia todo tipo de ocasião influenciável na decisão de vaga.
 
-Poderíamos aprimorar a avaliação viabilidade dos estacionamentos por exemplo, sendo considerada a distância que seria percorrida pela via do destino até lá e não somente em linha reta. Também consideraria a sinalização da via, pois mesmo um estacionamento sendo mais longe do destino, este pode ser mais viável por estar na mesma mão da via que o veículo vai estar ao invés do carro ter que ir adiante fazer retorno ou dar a volta no quarteirão (para vias de mão única).\\
+Poderíamos aprimorar a avaliação viabilidade dos estacionamentos por exemplo, sendo considerada a distância que seria percorrida pela via do destino até lá e não somente em linha reta. Também consideraria a sinalização da via, pois mesmo um estacionamento sendo mais longe do destino pode ser mais viável, por estar na mesma mão da via que o veículo e não necessitar de ir adiante para retornar.\\
 Melhor ainda seria adicionar funcionalidades novas, a aplicação poderia aceitar mais de um destino e procuraria um estacionamento que é no meio do caminho, que têm distância similares para todos eles.
 
 
 Também o próprio estacionamento em si pode ser muito sofisticado e agregar mais informações sobre:
 \begin{itemize}
-	\item preço: um dos primeiros fatores que influenciam numa escolha de estacionamento;
-	\item tipo da vaga: se a vaga é coberta ou a céu aberto, dependendo do clima do momento, uma é pode ser bem mais atrativa do que a outra;
-	\item tamanho da vaga: se você está andando de caminhonete \textit{heavy duty} ou de moto, você precisa de uma vaga específica;
-	\item horário de funcionamento: uma informação que é muito negligenciada pelas pessoas, mas dependendo do horário que precisa ser utilizado vai limitar totalmente as opções disponíveis;
-	\item reserva de vaga: se o usuário confirmar que vai utilizá-la, não seria legal ela não estar disponível no momento em que chegar no local;
-	\item pagamento: a aplicação aceitando pagamento para os estacionamentos como uma intermediária, pode aumentar a confiabilidade dos estabelecimentos além de economizar tempo pelo fato de poder ser realizado com um clique;
-	\item avaliação: desde o atendimento até o cuidado com seu veículo poderia ser informado por outros usuário que já utilizaram o lugar.
+	\item \textbf{preço}: um dos principais fatores que influenciam numa escolha de estacionamento;
+	\item \textbf{tipo da vaga}: se a vaga é coberta ou a céu aberto, dependendo do clima do momento, uma pode ser bem mais atrativa do que a outra;
+	\item \textbf{tamanho da vaga}: se você está andando de caminhonete \textit{heavy duty} ou de moto, você precisa de uma vaga específica;
+	\item \textbf{horário de funcionamento}: uma informação que é muito negligenciada pelas pessoas, mas dependendo do horário que precisa ser utilizado vai limitar totalmente as opções disponíveis;
+	\item \textbf{reserva de vaga}: se o usuário confirmar que vai utilizá-la, não seria legal ela estar indisponível no momento em que chegar no local;
+	\item \textbf{pagamento}: a aplicação aceitando pagamento para os estacionamentos como uma intermediária, pode aumentar a confiabilidade dos estabelecimentos além de economizar tempo pelo fato de poder ser realizado com um clique;
+	\item \textbf{avaliação dos usuários}: desde o atendimento até o cuidado com seu veículo poderia ser informado por outros usuário que já utilizaram o lugar.
 \end{itemize}
 
-Além de todos esses detalhes que poderiam ser agregados na simulação, temos o fato das comunicações em si. Se tivermos implementado comunicações reais entre cada ponto da névoa entre si e com os estacionamentos, teríamos a avaliação real da utilidade na névoa nesse contexto: tempo de processamento, tempo de resposta, informações baseadas nos eventos da localidade.
+Além de todos esses detalhes que poderiam ser agregados na simulação, temos o fato das comunicações em si. Se tivermos implementado comunicações reais dos pontos da névoa entre si e com os estacionamentos, teríamos a avaliação real da utilidade na névoa nesse contexto: tempo de processamento, tempo de resposta, informações baseadas nos eventos da localidade.
 
-Cada sugestão citada aqui pode ser usada para melhorar mais e mais a simulação, mas isso não quer dizer que o modelo não possa ser aperfeiçoado e ser utilizado com outros propósitos e com novas tecnologias além do ramo de estacionamentos.
+Cada sugestão citada aqui pode ser usada para melhorar mais e mais a simulação, mas isso não quer dizer que o modelo em si não possa ser aperfeiçoado e ser utilizado com outros propósitos e com novas tecnologias além do ramo de estacionamentos.
 
 \newpage
 
@@ -382,9 +381,9 @@ Cada sugestão citada aqui pode ser usada para melhorar mais e mais a simulação, 
 
 Os resultados do trabalhos foram satisfatórios dentro do que ele se dispôs, apesar de não ter sido possível implementar a comunicação entre névoas.
 A lógica de sua execução em si foi bem simples, seu maior problema foi a curva de aprendizado da utilização do simulador e de sua API para Java, que se encontra em versão alfa e com muito pouca documentação.\\
-Analisando-o como um todo, eu o descreveria como um grande começo. Devido ao tempo restrito para sua execução, o foco do foi gerar algo que tivesse algum valor para o usuário final e fosse escalável. Tendo como resultado algo simples porém que pode ser muito mais aperfeiçoado e aproveitado em vários pontos, como exposto na seção anterior.
+Analisando-o como um todo, eu o descreveria como um grande começo. Devido ao tempo restrito para sua execução, o foco do foi gerar algo que tivesse algum valor para o usuário final e fosse escalável. Tendo como resultado algo simples porém que pode ser muito mais aperfeiçoado e aproveitado em vários pontos.
 
-Atualmente é muito valorizado essa grande disponibilidade de informações rápidas e consistentes. Num contexto de aumento vertiginoso da população e de veículos nas ruas, gerando problemas ambientas e outros relacionados ao trânsito urbano no mundo todo, usar novas tecnologias para melhorá-lo de qualquer maneira se torna algo que pode impactar positivamente a vida de milhões de pessoas. A névoa computacional unida com redes veiculares é uma delas.
+Atualmente é muito valorizado essa grande disponibilidade de informações rápidas e consistentes. Num contexto de aumento vertiginoso da população e de veículos nas ruas, gerando problemas ambientais e outros relacionados ao trânsito urbano no mundo todo, usar novas tecnologias para melhorá-lo de qualquer maneira se torna algo que pode impactar positivamente a vida de milhões de pessoas. A névoa computacional unida com redes veiculares é uma delas.
 
 
 
@@ -395,7 +394,7 @@ Atualmente é muito valorizado essa grande disponibilidade de informações rápidas
 \section{Código-fonte}
 Todo código da aplicação e simulação está disponível em\\
 \\
-https://github.com/douglasascosta/parkinglot-cloud
+https://github.com/douglasascosta/parkinglot-cloud.
 \\
 \\
 
